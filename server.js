@@ -6,7 +6,7 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import dotenv from "dotenv"; // Import dotenv for managing environment variables
 
-dotenv.config(); // Load environment variables from .env file
+dotenv.config(); // Load environment variables from .env files
 
 
 const app = express();
