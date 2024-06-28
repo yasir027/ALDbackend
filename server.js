@@ -1149,21 +1149,20 @@ export async function getJudgmentsByMultipleCriteria(actKeywords, sectionKeyword
               c.courtName
           FROM 
               judgment j
-              left join 
-            court c on j.courtId = c.courtId
-          LEFT JOIN shortnote sn ON j.judgmentId = sn.judgmentId
-          LEFT JOIN shortnoteleg snl ON sn.shortNoteId = snl.shortNoteId
-          LEFT JOIN legislation l ON snl.legislationId = l.legislationId
-          LEFT JOIN shortnotelegsec snls ON sn.shortNoteId = snls.shortNoteId
-          LEFT JOIN legislationsection ls ON snls.legislationSectionId = ls.legislationSectionId
-          LEFT JOIN shortnotelegsubsec snlss ON sn.shortNoteId = snlss.shortNoteId
-          LEFT JOIN legislationsubsection lss ON snlss.legislationSubSectionId = lss.legislationSubSectionId
-          INNER JOIN judgmenttopics jt ON j.judgmentId = jt.judgmentId
-          INNER JOIN topic t ON jt.topicId = t.topicId
-          INNER JOIN judgmentjudges jj ON j.judgmentId = jj.judgmentId
-          INNER JOIN judge ju ON jj.judgeId = ju.judgeId
-          INNER JOIN judgmentadvocates ja ON j.judgmentId = ja.judgmentId
-          INNER JOIN advocate a ON ja.advocateId = a.advocateId
+              LEFT JOIN court c ON j.courtId = c.courtId
+              LEFT JOIN shortnote sn ON j.judgmentId = sn.judgmentId
+              LEFT JOIN shortnoteleg snl ON sn.shortNoteId = snl.shortNoteId
+              LEFT JOIN legislation l ON snl.legislationId = l.legislationId
+              LEFT JOIN shortnotelegsec snls ON sn.shortNoteId = snls.shortNoteId
+              LEFT JOIN legislationsection ls ON snls.legislationSectionId = ls.legislationSectionId
+              LEFT JOIN shortnotelegsubsec snlss ON sn.shortNoteId = snlss.shortNoteId
+              LEFT JOIN legislationsubsection lss ON snlss.legislationSubSectionId = lss.legislationSubSectionId
+              LEFT JOIN judgmenttopics jt ON j.judgmentId = jt.judgmentId
+              LEFT JOIN topic t ON jt.topicId = t.topicId
+              LEFT JOIN judgmentjudges jj ON j.judgmentId = jj.judgmentId
+              LEFT JOIN judge ju ON jj.judgeId = ju.judgeId
+              LEFT JOIN judgmentadvocates ja ON j.judgmentId = ja.judgmentId
+              LEFT JOIN advocate a ON ja.advocateId = a.advocateId
           WHERE 
       `;
 
@@ -1179,7 +1178,6 @@ export async function getJudgmentsByMultipleCriteria(actKeywords, sectionKeyword
                       JOIN legislation l ON snl.legislationId = l.legislationId
                       WHERE sn.judgmentId = j.judgmentId 
                       AND l.legislationName LIKE ?
-                      
                   )
               `);
           });
