@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "postinstall": "npm install commander@0.3.2 @elastic/elasticsearch"
+    "postinstall": "npm install commander@0.3.2"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +19,7 @@
     "mysql2": "^3.10.0",
     "nodemon": "^3.1.2",
     "search": "^1.0.0",
-    "sequelize": "^6.37.3"
+    "sequelize": "^6.37.3",
+    "elastic-package": "^7.14.0" // Add your Elasticsearch package here
   }
 }
