@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "postinstall": "npm install @elastic/elasticsearch"
+    "postinstall": "npm install commander@0.3.2 @elastic/elasticsearch"
   },
   "keywords": [],
   "author": "",
